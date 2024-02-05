@@ -7,18 +7,18 @@
      src: mongodb.repo
      dest: /etc/yum.repos.d/mongodb.repo
 
-  - name:  Install mongodb
+  - name: Install mongodb
     ansible.builtin.package:
        name: mongodb-org
        state: present
 
   - name : start and enable mongodb
-    ansible.builtin.systemd_service:
+    ansible.builtin.service:
       name: monogod
       state: started
       enabled: yes
 
-  - name: allow remote conncections
+  - name:  allow remote connections
     ansible.builtin.replace:
     path: /etc/mongod.conf
     regexp: '127.0.0.1'
