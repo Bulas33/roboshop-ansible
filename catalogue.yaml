@@ -20,7 +20,7 @@
        state: directory
 
   - name: download catalogue application
-    ansible.builtin.gey_url:
+    ansible.builtin.get_url:
        url: https://roboshop-builds.s3.amazonaws.com/catalogue.zip
        dest: /tmp  
 
