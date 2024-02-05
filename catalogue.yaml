@@ -57,5 +57,9 @@
       name: mongodb-org-shell
       state: present
 
-  
+  - name: get the categories count
+    ansible.builtin.command:  mongo --mongodb.wonblesst24.online --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
+    register: product_count
+
+                        
     
